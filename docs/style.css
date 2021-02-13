@@ -30,16 +30,38 @@ footer {
 .row {
     margin: 0;
 }
-.site-navigation li {
+.site-navigation li, a {
     transition: all .2s ease-in-out;
+}
+.site-navigation li {
     font-weight: 600;
     border-radius: 5px;
 }
-.site-navigation li:hover {
-    background-color: #f3976c;
+fieldset label {
+    margin: 24px 0 2px 0;
+    padding-left: 2px;
 }
-a:hover {
-    color: black;
+
+/*---focus---*/
+a:hover a:focus {
+    color: white;
+}
+a:focus,
+button:focus {
+    outline: dotted red 3px;
+    outline-offset: 5px;
+}
+.focus-alt:focus {
+    outline-color: white !important;
+}
+footer a:focus {
+    outline-color: black;
+}
+svg:focus {
+    outline: none;
+}
+.navbar-toggle:focus {
+    outline: dotted red 3px;
 }
 
 
@@ -191,7 +213,8 @@ a:hover {
 
 .navbar-brand {
     height: auto;
-    padding: 3px 15px;
+    padding: 0;
+    margin-left: 12px;
 }
 
 .navbar .nav {
@@ -207,7 +230,9 @@ a:hover {
 
 .nav > li a:hover,
 .nav > li a:focus {
-    background: transparent;
+    background-color: #d23e07;
+    border-radius: 5px;
+    color: white;
 }
 
 .navbar-toggle {
@@ -350,8 +375,10 @@ nav .caret {
     bottom: 20px;
     right: 20px;
     opacity: 0;
+    visibility: hidden;
     z-index: 500;
     transition: all .3s ease-in-out;
+    cursor: pointer;
 }
 
 .scrollToTop span {
@@ -360,6 +387,7 @@ nav .caret {
 
 .showScrollTop {
     opacity: 1;
+    visibility: visible;
 }
 
 a[data-lightbox] {
@@ -550,23 +578,30 @@ a {
 }
 
 .bgc-atomic-tangerine {
-    background-color: #F3976C;
+    background-color: #f3976c;
 }
 
 .btn-atomic-tangerine {
-    background: #F3976C;
-    color: black;
+    background: #d23e07;
+    color: white;
+    display: inline-block;
 }
 
-.btn-atomic-tangerine:hover {
-    background-color: #f07942;
+.btn-atomic-tangerine:hover, .btn-atomic-tangerine:focus {
+    background-color: #b23406;
+    color: white;
+}
+.btn-atomic-tangerine:focus {
+    outline: dotted red 3px;
+    outline-offset: 5px;
+    text-decoration: none;
 }
 
 .bg-banniere {
     background-image: url("img/banniere-la-chouette-agence-h450.jpg");
 }
 .bg-banniere-alt {
-    background-image: url("img/banniere-la-chouette-agence-h310.jpg");
+    background-image: url("img/banniere-la-chouette-agence-h450.jpg");
 }
 
 .bg-presentation {
@@ -641,13 +676,10 @@ a {
     .nav > li {
         margin-top: 0;
         border-bottom: 1px solid rgba(0, 0, 0, .1);
-        background-color: rgba(243, 151, 108, .6);
+        background-color: #f3976c;
         text-align: left;
         padding-left: 15px;
         width: 100%;
-    }
-    .nav > li:hover {
-        background-color: rgba(243, 151, 108, 1);
     }
     .dropdown .dropdown a .caret {
         float: none;
